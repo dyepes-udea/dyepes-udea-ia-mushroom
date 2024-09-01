@@ -28,7 +28,7 @@ Las siguientes librerías de Python:
 - Cargar y ejecutar el notebook en Google Colab
 - Abrir y descargar las depencias en tu maquina local (Opcional si se desea ejectuar en local)
 - Configura tus credenciales de Kaggle como se describe en el notebook. (Opcional)
-- Sigue las instrucciones en el notebook para ejecutar cada celda, desde la configuración inicial hasta la generación del archivo de envío.
+- Sigue las instrucciones en el notebook para ejecutar cada celda, desde la configuración inicial hasta la generación del archivo final.
 
 ### Ejecucion en local
 Debes instalar las dependencias con el siguiente comando 
