@@ -1,4 +1,4 @@
-# Resumen del Proyecto de Clasificación de Hongos
+# Proyecto Sustituto IA - MushroomClass
 Este proyecto se realiza como parte de la materia Modelos I en la Universidad de Antioquia.
 Se centra en el desarrollo de un modelo de machine learning para clasificar hongos utilizando características específicas de sus atributos. A lo largo de las diferentes fases, se han preparado, limpiado y analizado los datos para entrenar y evaluar un modelo de clasificación utilizando algoritmos como XGBoost. El proyecto también incluye la implementación de un contenedor Docker para facilitar la replicabilidad y el despliegue del modelo.
 
