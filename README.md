@@ -32,7 +32,3 @@ El propósito de este proyecto es desarrollar un modelo de clasificación precis
 2. **Fase de Contenerización y Despliegue**: En esta fase, se desarrolla un entorno Docker para contenerizar el modelo y sus dependencias, facilitando la replicabilidad y permitiendo que otros usuarios puedan ejecutar el modelo sin preocuparse por configuraciones locales. Los scripts están configurados para ejecutarse dentro del contenedor y generar las predicciones basadas en los datasets de entrada.
 
 Este enfoque permite que el modelo sea fácilmente desplegable, reproducible y escalable en diferentes entornos, asegurando la consistencia y portabilidad del código.
-
----
-
-Con esta estructura y metodología, el proyecto se encuentra preparado para avanzar hacia su optimización y potencial implementación en un entorno de producción.
