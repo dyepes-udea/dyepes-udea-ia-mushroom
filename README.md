@@ -1,38 +1,38 @@
-# dyepes-udea-ia-mushroom
-## Mushroom Classification Analysis
-Este proyecto se realiza como parte de la materia Modelos I en la Universidad de Antioquia. Mi nombre es Daniel Alejandro Yepes Mesa y en este proyecto abordamos el desafío presentado en la competencia Mushroom Classification Analysis, que busca indentificar que hongos son venenosos en funcion de diferentes caracteristicas.
+# Resumen del Proyecto de Clasificación de Hongos
+Este proyecto se realiza como parte de la materia Modelos I en la Universidad de Antioquia.
+Se centra en el desarrollo de un modelo de machine learning para clasificar hongos utilizando características específicas de sus atributos. A lo largo de las diferentes fases, se han preparado, limpiado y analizado los datos para entrenar y evaluar un modelo de clasificación utilizando algoritmos como XGBoost. El proyecto también incluye la implementación de un contenedor Docker para facilitar la replicabilidad y el despliegue del modelo.
 
-## Contexto
-En esta competencia de Kaggle, el objetivo es desarrollar modelos de machine learning para predecir una variable objetivo en un conjunto de datos proporcionado. Este desafío se centra en la manipulación de datos categóricos, la imputación de valores faltantes, y el uso de técnicas de modelado como XGBoost y LightGBM.
+Desarrollador por: Daniel Alejandro Yepes Mesa
 
-## Requisitos
-Antes de ejecutar el notebook, asegúrate de tener instalado:
-- Python 3.x
-  
-Las siguientes librerías de Python:
-- Kaggle
-- Dython
-- Category_encoders
-- Lime
-- Plotly
-- XGBoost
-- LightGBM
-- Numpy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit-learn
+## Estructura del Proyecto
 
-## Cómo Ejecutar?
-- Clona o descarga el notebook del repositorio.
-- Cargar y ejecutar el notebook en Google Colab
-- Abrir y descargar las depencias en tu maquina local (Opcional si se desea ejectuar en local)
-- Configura tus credenciales de Kaggle como se describe en el notebook. (Opcional)
-- Sigue las instrucciones en el notebook para ejecutar cada celda, desde la configuración inicial hasta la generación del archivo final.
+El proyecto está dividido en dos fases principales, cada una con su propio conjunto de archivos:
 
-### Ejecucion en local
-Debes instalar las dependencias con el siguiente comando 
+### Fase 1
 
-`pip install kaggle dython category_encoders lime plotly xgboost lightgbm numpy pandas matplotlib seaborn scikit-learn
-`
-Estas tambien se encuentran incluidas en el Notebook.
+- **mushroomclass.py**: Script en Python que contiene el análisis y preprocesamiento de los datos, así como la implementación inicial del modelo.
+- **MushroomClass.ipynb**: Notebook en Jupyter que detalla todo el proceso de análisis, visualización de datos y pruebas del modelo de clasificación.
+- **readme.md**: Documento que explica el propósito y las instrucciones para ejecutar los scripts y notebooks en esta fase.
+
+### Fase 2
+
+- **Dockerfile**: Archivo de configuración que define la imagen Docker para crear un entorno reproducible donde ejecutar el modelo.
+- **Predict.py**: Script que carga el modelo entrenado y genera predicciones basadas en los datos de prueba.
+- **requirements.txt**: Lista de dependencias necesarias para ejecutar los scripts en el entorno Docker.
+- **test.csv**: Dataset de prueba utilizado para evaluar las predicciones del modelo.
+- **train.csv**: Dataset de entrenamiento utilizado para entrenar el modelo de clasificación.
+- **readme.md**: Documento con instrucciones detalladas sobre cómo construir, ejecutar y gestionar el contenedor Docker para entrenar y probar el modelo.
+
+## Propósito del Proyecto
+
+El propósito de este proyecto es desarrollar un modelo de clasificación preciso que pueda predecir si un hongo es comestible o venenoso basado en sus características físicas. Para lograrlo, se ha dividido el proyecto en dos fases:
+
+1. **Fase de Exploración y Desarrollo del Modelo**: En esta fase se exploran los datos, se realiza la limpieza y el preprocesamiento necesario, y se desarrolla un modelo inicial utilizando XGBoost, evaluando su desempeño con métricas como el MCC (coeficiente de correlación de Matthews).
+
+2. **Fase de Contenerización y Despliegue**: En esta fase, se desarrolla un entorno Docker para contenerizar el modelo y sus dependencias, facilitando la replicabilidad y permitiendo que otros usuarios puedan ejecutar el modelo sin preocuparse por configuraciones locales. Los scripts están configurados para ejecutarse dentro del contenedor y generar las predicciones basadas en los datasets de entrada.
+
+Este enfoque permite que el modelo sea fácilmente desplegable, reproducible y escalable en diferentes entornos, asegurando la consistencia y portabilidad del código.
+
+---
+
+Con esta estructura y metodología, el proyecto se encuentra preparado para avanzar hacia su optimización y potencial implementación en un entorno de producción.
