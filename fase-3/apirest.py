@@ -1,3 +1,15 @@
+"""
+Este script define una API REST usando Flask para interactuar con modelos de Machine Learning.
+Incluye dos endpoints:
+- /train: Ejecuta el script train.py para entrenar el modelo y guardar el archivo del modelo entrenado.
+- /predict: Ejecuta el script predict.py para realizar predicciones sobre un archivo CSV de prueba.
+
+Requisitos:
+- Flask
+- pandas
+"""
+
+
 from flask import Flask, request, jsonify
 import subprocess
 import os
@@ -14,9 +26,14 @@ OUTPUT_FILE = "submission.csv"  # Archivo de salida donde se guardarán las pred
 @app.route('/train', methods=['POST'])
 def train():
     """
-    Este endpoint permite entrenar el modelo usando los datos de train.csv.
-    Al recibir una solicitud POST, ejecuta el script train.py y almacena el modelo entrenado en model.pkl.
-    Devuelve un mensaje indicando si el entrenamiento fue exitoso o si ocurrió algún error.
+    Endpoint para entrenar el modelo.
+    Ejecuta el script `train.py` con argumentos específicos para:
+    - model_file: nombre del archivo donde se guardará el modelo.
+    - data_train: archivo CSV de entrenamiento.
+    - overwrite_model: opción para sobreescribir el modelo.
+    
+    Retorna:
+    - JSON con el estado de éxito o error del entrenamiento.
     """
     try:
         # Ejecuta el script train.py sin modificarlo
@@ -37,10 +54,13 @@ def train():
 @app.route('/predict', methods=['POST'])
 def predict():
     """
-    Este endpoint permite realizar predicciones usando el modelo entrenado.
-    Si se proporciona un archivo CSV en la solicitud, lo utiliza para la predicción.
-    Si no se proporciona, utiliza el archivo predeterminado test.csv para la predicción.
-    Devuelve las predicciones en formato JSON o un mensaje de error en caso de fallo.
+    Endpoint para realizar predicciones usando el modelo entrenado.
+    - Si se recibe un archivo CSV en la solicitud, se utiliza ese archivo.
+    - Si no se recibe un archivo, se utiliza el archivo predeterminado `test.csv`.
+    Ejecuta el script `predict.py` y procesa las predicciones generadas.
+
+    Retorna:
+    - JSON con el mensaje de archivo utilizado y las predicciones generadas o un mensaje de error.
     """
     try:
         # Verifica si se envió un archivo; si no, usa el archivo predeterminado
